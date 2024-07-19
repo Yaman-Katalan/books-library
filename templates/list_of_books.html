@@ -1,9 +1,10 @@
-{% extends 'base.html' %} {% block title %}Books{% endblock %} {% block content
-%}
+{% extends 'base.html' %} {% block content %}
+
 <h2>Books in our Library</h2>
 <ul>
   {% for book in books %}
-  <li>{{ book.title }} - {{ book.author.username }}</li>
+  <li><a href="{% url 'details' book.pk %}">{{ book.title }}</a></li>
   {% endfor %}
 </ul>
+
 {% endblock %}
